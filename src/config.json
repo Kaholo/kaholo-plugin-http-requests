@@ -1,0 +1,47 @@
+{
+  "name": "HTTP-Requests",
+  "type": "executer",
+  "exposeRoute": false,
+  "execProgram": "node",
+  "main": "app.js",
+  "version": "1.0.0",
+  "methods": [
+    {
+      "name": "sendRequest",
+      "viewName": "Send request",
+      "params": [
+        {
+          "name": "method",
+          "viewName": "Method",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "viewName": "URL",
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "viewName": "Body",
+          "type": "string"
+        },
+        {
+          "name": "username",
+          "viewName": "Username",
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "viewName": "Password",
+          "type": "vault"
+        },
+        {
+          "name": "bearerToken",
+          "viewName": "Bearer Token",
+          "type": "vault"
+        }
+      ]
+    }
+  ],
+  "imgUrl": "icon.png"
+}
