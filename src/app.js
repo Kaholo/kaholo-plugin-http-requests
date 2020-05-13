@@ -7,14 +7,12 @@ function sendRequest(action){
             bearer: action.params.bearerToken,
             sendImmediately : true
         }
-    } else if (action.params.username && action.params.password){
+    } else if (action.params.username || action.params.password){
         auth = {
             user: action.params.username,
             pass: action.params.password,
             sendImmediately : false
         }
-    } else if (action.params.username || action.params.password){
-        return Promise.reject("Both username and password must be supploed")
     }
 
     const requestOptions = {
@@ -22,6 +20,7 @@ function sendRequest(action){
         method : action .params.method,
         body : action .params.body,
         json : true,
+        headers: action .params.headers || {},
         auth : auth
     };
     

@@ -26,6 +26,11 @@
           "type": "string"
         },
         {
+          "name": "headers",
+          "viewName": "Headers (Obj)",
+          "type": "string"
+        },
+        {
           "name": "username",
           "viewName": "Username",
           "type": "string"
