@@ -11,16 +11,16 @@ function sendRequest(action){
         auth = {
             user: action.params.username,
             pass: action.params.password,
-            sendImmediately : false
+            sendImmediately : true
         }
     }
 
     const requestOptions = {
-        url : action .params.url,
-        method : action .params.method,
-        body : action .params.body,
+        url : action.params.url,
+        method : action.params.method || "GET",
+        body : action.params.body || undefined,
         json : true,
-        headers: action .params.headers || {},
+        headers: action.params.headers || {},
         auth : auth
     };
     
