@@ -1,4 +1,5 @@
 const request = require('request');
+const methods = require('http').METHODS;
 
 function sendRequest(action){
     let auth;
@@ -34,6 +35,16 @@ function sendRequest(action){
     })
 }
 
+
+//////////////// Helpers //////////////
+async function getAllMethods(query) {
+    return methods.filter(method=>method.includes(query || '')).map(method=>{  
+        return {id:method, value:method} 
+    });
+}
+
+getAllMethods();
 module.exports = {
-    sendRequest: sendRequest
+    sendRequest: sendRequest,
+    getAllMethods: getAllMethods
 }
