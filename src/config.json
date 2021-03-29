@@ -4,16 +4,40 @@
   "exposeRoute": false,
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "description": "Send HTTP Requests",
+  "imgUrl": "icon.png",
   "methods": [
     {
       "name": "sendRequest",
-      "viewName": "Send request",
+      "viewName": "Send Request",
       "params": [
         {
           "name": "method",
           "viewName": "Method",
-          "type": "string"
+          "type": "options",
+          "options": [
+            {
+              "id": "POST",
+              "name": "POST"
+            },
+            {
+              "id": "POST",
+              "name": "POST"
+            },
+            {
+              "id": "PUT",
+              "name": "PUT"
+            },
+            {
+              "id": "PATCH",
+              "name": "PATCH"
+            },
+            {
+              "id": "DELETE",
+              "name": "DELETE"
+            }
+          ]
         },
         {
           "name": "url",
@@ -47,6 +71,5 @@
         }
       ]
     }
-  ],
-  "imgUrl": "icon.png"
+  ]
 }
