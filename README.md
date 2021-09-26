@@ -2,7 +2,7 @@
 HTTP requests plugin for Kaholo
 
 ## Method: Send Request
-Lists all services enabled in the specified project.
+Sends an HTTP request to the specified URL.
 
 ### Parameters:
 1. Method (string) **Required** - HTTP request type. GET/POST/PUT/PATCH/DELETE
