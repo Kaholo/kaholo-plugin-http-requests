@@ -5,7 +5,7 @@ HTTP requests plugin for Kaholo
 Lists all services enabled in the specified project.
 
 ### Parameters:
-1. Method (string) **Required** - HTTP request type. POST/GET/PUT/PATCH/DELETE
+1. Method (string) **Required** - HTTP request type. GET/POST/PUT/PATCH/DELETE
 2. URL (string) **Required** - The URL to send the request to.
 3. Body (string) **Optional** - The body of the HTTP request.
 4. Headers (object) **Optional** - An object contating the headers of the request.
