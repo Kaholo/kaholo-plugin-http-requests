@@ -1,39 +1,48 @@
+const kaholoPluginLibrary = require("@kaholo/plugin-library");
 const request = require("request");
 
-function sendRequest(action) {
+function sendRequest({
+  bearerToken,
+  username,
+  password,
+  url,
+  method,
+  body,
+  headers,
+}) {
   let auth;
-  if (action.params.bearerToken) {
+  if (bearerToken) {
     auth = {
-      bearer: action.params.bearerToken,
+      bearer: bearerToken,
       sendImmediately: true,
     };
-  } else if (action.params.username || action.params.password) {
+  } else if (username || password) {
     auth = {
-      user: action.params.username,
-      pass: action.params.password,
+      user: username,
+      pass: password,
       sendImmediately: true,
     };
   }
 
   const requestOptions = {
-    url: action.params.url,
-    method: action.params.method || "GET",
-    body: action.params.body || undefined,
-    json: true,
-    headers: action.params.headers || {},
+    url,
+    method,
+    body,
     auth,
+    headers,
+    json: true,
   };
 
   return new Promise((resolve, reject) => {
     request(requestOptions, (err, response) => {
       if (err) {
-        return reject(err);
+        reject(err);
       }
-      return resolve(response);
+      resolve(response);
     });
   });
 }
 
-module.exports = {
+module.exports = kaholoPluginLibrary.bootstrap({
   sendRequest,
-};
+});

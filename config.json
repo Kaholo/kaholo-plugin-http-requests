@@ -4,9 +4,10 @@
   "exposeRoute": false,
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Send HTTP Requests",
   "imgUrl": "icon.png",
+  "category": "CORE",
   "methods": [
     {
       "name": "sendRequest",
@@ -16,6 +17,7 @@
           "name": "method",
           "viewName": "Method",
           "type": "options",
+          "default": "GET",
           "options": [
             {
               "id": "GET",
@@ -51,7 +53,8 @@
         },
         {
           "name": "headers",
-          "viewName": "Headers (Obj)",
+          "viewName": "Headers (Object)",
+          "default": {},
           "type": "string"
         },
         {
@@ -71,6 +74,5 @@
         }
       ]
     }
-  ],
-  "category": "CORE"
+  ]
 }
