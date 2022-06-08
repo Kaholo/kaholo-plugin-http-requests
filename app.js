@@ -29,7 +29,7 @@ function sendRequest({
     method,
     body,
     auth,
-    headers,
+    headers: headers || {},
     json: true,
   };
 
