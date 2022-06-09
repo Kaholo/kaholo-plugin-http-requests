@@ -1,0 +1,20 @@
+{
+  "name": "kaholo-plugin-http-requests",
+  "description": "plugin to send HTTP Requests",
+  "main": "app.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@kaholo/plugin-library": "^1.3.0",
+    "request": "2.88.2"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.26.0"
+  }
+}
