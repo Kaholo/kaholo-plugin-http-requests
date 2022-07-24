@@ -1,5 +1,6 @@
 {
   "name": "HTTP-Requests",
+  "viewName": "HTTP Requests",
   "type": "executer",
   "exposeRoute": false,
   "execProgram": "node",
