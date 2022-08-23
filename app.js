@@ -1,46 +1,44 @@
 const kaholoPluginLibrary = require("@kaholo/plugin-library");
-const request = require("request");
+const { default: axios } = require("axios");
 
-function sendRequest({
-  bearerToken,
-  username,
-  password,
-  url,
-  method,
-  body,
-  headers,
-}) {
-  let auth;
-  if (bearerToken) {
-    auth = {
-      bearer: bearerToken,
-      sendImmediately: true,
-    };
-  } else if (username || password) {
-    auth = {
-      user: username,
-      pass: password,
-      sendImmediately: true,
-    };
-  }
-
-  const requestOptions = {
+async function sendRequest(params) {
+  const {
+    bearerToken,
+    username,
+    password,
     url,
     method,
     body,
-    auth,
-    headers: headers || {},
-    json: true,
+    headers,
+  } = params;
+
+  const requestHeaders = {
+    ...headers,
+  };
+  if (bearerToken) {
+    requestHeaders.Authorization = `Bearer ${bearerToken}`;
+  }
+
+  const requestConfig = {
+    url,
+    method,
+    data: body,
+    headers: requestHeaders,
   };
 
-  return new Promise((resolve, reject) => {
-    request(requestOptions, (err, response) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(response);
-    });
-  });
+  const auth = {};
+  if (username) {
+    auth.username = username;
+  }
+  if (password) {
+    auth.password = password;
+  }
+  if (Object.keys(auth).length > 0) {
+    requestConfig.auth = auth;
+  }
+
+  const { data } = await axios(requestConfig);
+  return data;
 }
 
 module.exports = kaholoPluginLibrary.bootstrap({
