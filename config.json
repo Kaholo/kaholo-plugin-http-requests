@@ -49,12 +49,14 @@
         {
           "name": "body",
           "viewName": "Body",
-          "type": "string"
+          "parserType": "object",
+          "type": "text"
         },
         {
           "name": "headers",
           "viewName": "Headers (Object)",
-          "type": "string"
+          "parserType": "object",
+          "type": "text"
         },
         {
           "name": "username",
