@@ -1,6 +1,8 @@
 const kaholoPluginLibrary = require("@kaholo/plugin-library");
 const { default: axios } = require("axios");
 
+const { safeParseJSON } = require("./helpers");
+
 async function sendRequest(params) {
   const {
     bearerToken,
@@ -22,7 +24,7 @@ async function sendRequest(params) {
   const requestConfig = {
     url,
     method,
-    data: body,
+    data: safeParseJSON(body),
     headers: requestHeaders,
   };
 

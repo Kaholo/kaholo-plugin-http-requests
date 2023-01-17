@@ -64,7 +64,6 @@
         {
           "name": "body",
           "viewName": "Body",
-          "parserType": "object",
           "type": "text"
         },
         {
