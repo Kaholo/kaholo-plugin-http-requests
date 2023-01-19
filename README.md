@@ -5,6 +5,9 @@ If authentication is required, use either username/password or provide a JWT Bea
 
 Headers (other than bearer token) must be provided in JSON format. For example, `{ name: 'content-type', value: 'application/x-www-form-urlencoded' }` or `{ "content-type": "application/json" }`.
 
+## Plugin Installation
+For download, installation, upgrade, downgrade and troubleshooting of plugins in general, see [INSTALL.md](./INSTALL.md).
+
 ## Method: Send HTTP Request
 Sends an HTTP request to the specified URL. This method accepts several parameters, most of which are optional.
 * HTTP Request Method - Select an HTTP request type to send from GET/POST/PUT/PATCH/DELETE.
