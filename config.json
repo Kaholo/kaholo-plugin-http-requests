@@ -1,21 +1,36 @@
 {
   "name": "HTTP-Requests",
+  "viewName": "HTTP Requests",
   "type": "executer",
   "exposeRoute": false,
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "description": "Send HTTP Requests",
-  "imgUrl": "icon.png",
-  "category": "CORE",
+  "imgUrl": "logo.png",
+  "category": "Basic Tools",
+  "keywords": [
+    "http",
+    "web",
+    "https",
+    "api",
+    "get",
+    "put",
+    "curl",
+    "post",
+    "patch",
+    "delete",
+    "request",
+    "url"
+  ],
   "methods": [
     {
       "name": "sendRequest",
-      "viewName": "Send Request",
+      "viewName": "Send HTTP Request",
       "params": [
         {
           "name": "method",
-          "viewName": "Method",
+          "viewName": "HTTP Request Method",
           "type": "options",
           "default": "GET",
           "options": [
@@ -49,12 +64,13 @@
         {
           "name": "body",
           "viewName": "Body",
-          "type": "string"
+          "type": "text"
         },
         {
           "name": "headers",
           "viewName": "Headers (Object)",
-          "type": "string"
+          "parserType": "object",
+          "type": "text"
         },
         {
           "name": "username",
