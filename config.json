@@ -6,7 +6,7 @@
   "execProgram": "node",
   "main": "app.js",
   "version": "2.0.0",
-  "description": "Send HTTP Requests",
+  "description": "An HTTP client based on Axios",
   "imgUrl": "logo.png",
   "category": "Basic Tools",
   "keywords": [
@@ -21,7 +21,9 @@
     "patch",
     "delete",
     "request",
-    "url"
+    "url",
+    "rest",
+    "axios"
   ],
   "methods": [
     {
@@ -31,6 +33,8 @@
         {
           "name": "method",
           "viewName": "HTTP Request Method",
+          "description": "The HTTP method to use for the request",
+          "learnUrl": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
           "type": "options",
           "default": "GET",
           "options": [
@@ -59,32 +63,42 @@
         {
           "name": "url",
           "viewName": "URL",
-          "type": "string"
+          "description": "The URL to which the request will be sent",
+          "placeholder": "https://httpbin.org/get",
+          "type": "string",
+          "required": true
         },
         {
           "name": "body",
           "viewName": "Body",
+          "description": "Body of HTTP request, should match Content-Type header",
+          "placeholder": "{\"query\":{\"match_all\":{}}}",
           "type": "text"
         },
         {
           "name": "headers",
-          "viewName": "Headers (Object)",
+          "viewName": "Headers (JSON Object)",
+          "description": "used in an HTTP request to provide information about the request context",
           "parserType": "object",
+          "placeholder": "{\"Content-Type\":\"application/json\"}",
           "type": "text"
         },
         {
           "name": "username",
           "viewName": "Username",
+          "description": "user name to authenticate the request (HTTP Basic auth)",
           "type": "string"
         },
         {
           "name": "password",
           "viewName": "Password",
+          "description": "password to authenticate the request (HTTP Basic auth)",
           "type": "vault"
         },
         {
           "name": "bearerToken",
           "viewName": "Bearer Token",
+          "description": "a token (JWT, OAuth, etc) to authenticate an HTTPS request",
           "type": "vault"
         }
       ]
