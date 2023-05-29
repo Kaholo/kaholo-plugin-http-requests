@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@kaholo/plugin-library": "^2.1.2",
+    "@kaholo/plugin-library": "^2.2.1",
     "axios": "0.27.2"
   },
   "devDependencies": {
