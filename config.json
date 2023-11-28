@@ -23,7 +23,9 @@
     "request",
     "url",
     "rest",
-    "axios"
+    "axios",
+    "rest",
+    "api"
   ],
   "auth": {
     "authId": "httpRequestUserPassBearer",
@@ -60,6 +62,8 @@
           "learnUrl": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
           "type": "options",
           "default": "GET",
+          "required": true,
+          "placeholder": "please select one",
           "options": [
             {
               "id": "GET",
