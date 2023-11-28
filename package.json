@@ -6,10 +6,10 @@
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix"
   },
-  "author": "",
+  "author": "Kaholo team (Maciej Drobinski)",
   "license": "ISC",
   "dependencies": {
-    "@kaholo/plugin-library": "^2.2.1",
+    "@kaholo/plugin-library": "^2.4.0",
     "axios": "0.27.2"
   },
   "devDependencies": {
