@@ -12,6 +12,14 @@ Headers must be provided in JSON string format or as an object from the code lay
 ## Token vs Bearer Token
 There are two types of HTTP "tokens". One is to be used as the password for basic authentication and requires the username also be supplied. The other is called a "Bearer Token", sent in an "Authorization" request header. Tokens that do not quickly expire are probably the former, often called personal access tokens (PAT). Bearer tokens are commonly associated with OAuth. If in doubt, try using your token both ways and see which works.
 
+## Authentication
+Authentication parameters for this plugin are managed using Kaholo Accounts. In Kaholo Settings | Plugins, the name of the plugin, "HTTP Requests", is a blue link to plugin-level settings. Accounts are on the 2nd tab. Here several accounts may be created with combinations of username, password/token, and bearer token. Then at the action level only the account name need be selected for each action.
+
+It is unlikely that all three of username, password, and bearer token should be required for any request. Most accounts will use either username and password (or token), or bearer token alone.
+
+### Dummy Account
+Accounts are required for all actions, even if no authentication is required for the HTTP Request. It is suggested to make an account named "Dummy Account" and leave all three parameters unspecified for this use case.
+
 ## Plugin Installation
 For download, installation, upgrade, downgrade and troubleshooting of plugins in general, see [INSTALL.md](./INSTALL.md).
 
