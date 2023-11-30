@@ -5,7 +5,7 @@
   "exposeRoute": false,
   "execProgram": "node",
   "main": "app.js",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "An HTTP client based on Axios",
   "imgUrl": "logo.png",
   "category": "Basic Tools",
@@ -23,8 +23,33 @@
     "request",
     "url",
     "rest",
-    "axios"
+    "axios",
+    "rest",
+    "api"
   ],
+  "auth": {
+    "authId": "httpRequestUserPassBearer",
+    "params": [
+      {
+        "name": "username",
+        "viewName": "Username",
+        "description": "User name to authenticate the request (HTTP Basic auth)",
+        "type": "string"
+      },
+      {
+        "name": "password",
+        "viewName": "Password or Token",
+        "description": "Password or token to authenticate the request (HTTP Basic auth)",
+        "type": "vault"
+      },
+      {
+        "name": "bearerToken",
+        "viewName": "Bearer Token",
+        "description": "A token (JWT, OAuth, etc) to authenticate an HTTPS request",
+        "type": "vault"
+      }
+    ]
+  },
   "methods": [
     {
       "name": "sendRequest",
@@ -37,6 +62,8 @@
           "learnUrl": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
           "type": "options",
           "default": "GET",
+          "required": true,
+          "placeholder": "please select one",
           "options": [
             {
               "id": "GET",
@@ -71,35 +98,17 @@
         {
           "name": "body",
           "viewName": "Body",
-          "description": "Body of HTTP request, should match Content-Type header",
-          "placeholder": "{\"query\":{\"match_all\":{}}}",
-          "type": "text"
+          "description": "Body of HTTP request, format matching Content-Type header",
+          "type": "text",
+          "placeholder": "{\"query\":{\"match_all\":{}}}"
         },
         {
           "name": "headers",
-          "viewName": "Headers (JSON Object)",
-          "description": "used in an HTTP request to provide information about the request context",
+          "viewName": "Headers (JSON or Object)",
+          "description": "Used in an HTTP request to provide information about the request context",
+          "type": "text",
           "parserType": "object",
-          "placeholder": "{\"Content-Type\":\"application/json\"}",
-          "type": "text"
-        },
-        {
-          "name": "username",
-          "viewName": "Username",
-          "description": "user name to authenticate the request (HTTP Basic auth)",
-          "type": "string"
-        },
-        {
-          "name": "password",
-          "viewName": "Password",
-          "description": "password to authenticate the request (HTTP Basic auth)",
-          "type": "vault"
-        },
-        {
-          "name": "bearerToken",
-          "viewName": "Bearer Token",
-          "description": "a token (JWT, OAuth, etc) to authenticate an HTTPS request",
-          "type": "vault"
+          "placeholder": "{\"Content-Type\":\"application/json\", \"X-Atlassian-Token\":\"no-check\"}"
         }
       ]
     }
